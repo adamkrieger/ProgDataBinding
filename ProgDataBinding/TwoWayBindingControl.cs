@@ -44,7 +44,7 @@ namespace ProgDataBinding
 
 			realTimeOutput.SetBinding(TextBox.TextProperty, binding);
 
-			this.AddNewAutoHeightRow();
+			this.AddAutoHeightRow();
 			this.AddChild(realTimeInput, this.LastRowIndex(), 0);
 			this.AddChild(realTimeOutput, this.LastRowIndex(), 1);
 			this.AddChild(_twoWayUpdate, this.LastRowIndex(), 2);
@@ -65,15 +65,13 @@ namespace ProgDataBinding
 
 		private void InitializeColumnsAndLabels()
 		{
-			ColumnDefinitions.Add(new ColumnDefinition());
-			ColumnDefinitions.Add(new ColumnDefinition());
-			ColumnDefinitions.Add(new ColumnDefinition());
+			this.AddMaxWidthColumns(3);
+			this.AddAutoHeightRow();
 
 			var updateSourceLabel = new TextBlock { Text = "UpdateSource", HorizontalAlignment = HorizontalAlignment.Center };
 			var targetLabel = new TextBlock { Text = "Target", HorizontalAlignment = HorizontalAlignment.Center };
 			var dpLabel = new TextBlock { Text = "DP Content", HorizontalAlignment = HorizontalAlignment.Center };
 
-			this.AddNewAutoHeightRow();
 			this.AddChild(updateSourceLabel, this.LastRowIndex(), 0);
 			this.AddChild(targetLabel, this.LastRowIndex(), 1);
 			this.AddChild(dpLabel, this.LastRowIndex(), 2);

@@ -33,7 +33,7 @@ namespace ProgDataBinding
 
 			realTimeOutput.SetBinding(TextBox.TextProperty, binding);
 
-			this.AddNewAutoHeightRow();
+			this.AddAutoHeightRow();
 			this.AddChild(realTimeInput, this.LastRowIndex(), 0);
 			this.AddChild(realTimeOutput, this.LastRowIndex(), 1);
 		}
@@ -46,7 +46,7 @@ namespace ProgDataBinding
 			var updateSourceLabel = new TextBlock { Text = "UpdateSource", HorizontalAlignment = HorizontalAlignment.Center };
 			var targetLabel = new TextBlock { Text = "Target", HorizontalAlignment = HorizontalAlignment.Center };
 
-			this.AddNewAutoHeightRow();
+			this.AddAutoHeightRow();
 			this.AddChild(updateSourceLabel, this.LastRowIndex(), 0);
 			this.AddChild(targetLabel, this.LastRowIndex(), 1);
 		}

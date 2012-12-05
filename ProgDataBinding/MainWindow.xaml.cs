@@ -25,6 +25,10 @@ namespace ProgDataBinding
 			InitializeComponent();
 
 			BuildOneWaySourceToTarget();
+
+			BuildTwoWayBindingControl();
+
+			BuildMathToString();
 		}
 
 		private void BuildOneWaySourceToTarget()
@@ -32,10 +36,20 @@ namespace ProgDataBinding
 			var oneWayBindingControl = new OneWaySourceToTarget();
 
 			AddToGridWithinBorder(oneWayBindingControl);
+		}
 
+		private void BuildTwoWayBindingControl()
+		{
 			var twoWayBindingControl = new TwoWayBindingControl();
 
 			AddToGridWithinBorder(twoWayBindingControl);
+		}
+
+		private void BuildMathToString()
+		{
+			var mathToString = new MathToStringControl();
+
+			AddToGridWithinBorder(mathToString);
 		}
 
 		private void AddToGridWithinBorder(UIElement control)
@@ -48,7 +62,7 @@ namespace ProgDataBinding
 
 			border.Child = control;
 
-			controlGrid.AddNewAutoHeightRow();
+			controlGrid.AddAutoHeightRow();
 			controlGrid.AddChild(border, controlGrid.LastRowIndex(), 0);
 		}
 
