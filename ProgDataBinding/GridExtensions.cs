@@ -39,7 +39,7 @@ namespace GridExtensions
 
 		public static void AddAutoWidthColumns(this Grid pGrid, int numberOfColumnsToAdd)
 		{
-			for (int x = 1; x > numberOfColumnsToAdd; x++)
+			for (int x = 0; x < numberOfColumnsToAdd; x++)
 			{
 				pGrid.AddAutoWidthColumn();
 			}

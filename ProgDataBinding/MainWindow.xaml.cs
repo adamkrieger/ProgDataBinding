@@ -29,6 +29,8 @@ namespace ProgDataBinding
 			BuildTwoWayBindingControl();
 
 			BuildMathToString();
+
+			BuildVisualList();
 		}
 
 		private void BuildOneWaySourceToTarget()
@@ -50,6 +52,13 @@ namespace ProgDataBinding
 			var mathToString = new MathToStringControl();
 
 			AddToGridWithinBorder(mathToString);
+		}
+
+		private void BuildVisualList()
+		{
+			var visualListControl = new VisualListBindingControl();
+
+			AddToGridWithinBorder(visualListControl);
 		}
 
 		private void AddToGridWithinBorder(UIElement control)
